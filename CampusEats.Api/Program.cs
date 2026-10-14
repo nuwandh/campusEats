@@ -60,6 +60,15 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddScoped<IMenuService, MenuService>();
 
+const string DashboardCorsPolicy = "DashboardCors";
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy(DashboardCorsPolicy, policy =>
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod());
+});
+
 builder.Services.AddDbContext<AppDbContext>(opt =>
  opt.UseNpgsql(builder.Configuration
  .GetConnectionString("DefaultConnection")));
@@ -89,6 +98,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(DashboardCorsPolicy);
 
 app.UseAuthentication();
 app.UseAuthorization();

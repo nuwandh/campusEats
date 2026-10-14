@@ -3,7 +3,7 @@ import { useFetch } from "../hooks/useFetch";
 
 function DishDetailPage() {
   const { id } = useParams();
-  const { data: dishes, isLoading, error } = useFetch("/menu.json");
+  const { data: dishes, isLoading, error } = useFetch(`${import.meta.env.VITE_API_URL}/menu`);
 
   if (isLoading) return <p>Loading…</p>;
   if (error) return <p>Could not load dish: {error}</p>;

@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("4e10d721-2485-41e1-8bd1-ede45325749d")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CampusEats.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f20347a2ef9d22f1173d0aa4a2499a7ed0ba1c97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c68e98ce12cf39270df0258763e224f399266dc9")]
 [assembly: System.Reflection.AssemblyProductAttribute("CampusEats.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CampusEats.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

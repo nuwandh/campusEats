@@ -15,7 +15,7 @@ import { useFetch } from "../hooks/useFetch";
 function MenuPage() {
     const [query, setQuery] = useState("");
  const debounced = useDebounce(query, 400);
-const { data: dishes, isLoading, error } = useFetch("/menu.json");
+const { data: dishes, isLoading, error } = useFetch(`${import.meta.env.VITE_API_URL}/menu`);
 
 if (isLoading) return <p>Loading menu…</p>;
 if (error) return <p>Could not load menu: {Error}</p>;
